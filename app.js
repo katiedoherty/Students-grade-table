@@ -1,10 +1,11 @@
-$.get('names.txt', function(txt) {
+/*$.get('names.txt', function(txt) {
     var lines = txt.responseText.split("\n");
     var randLineNum = Math.floor(Math.random() * lines.length);
     return lines[randLineNum]; // random line from the text file
-    });
+    });*/
 
-    function getRandomString(length) {
+  function studentid(){
+        length=9;
         var randomChars = '123456789';
         var result = '';
         for ( var i = 0; i < length; i++ ) {
@@ -12,3 +13,9 @@ $.get('names.txt', function(txt) {
         }
         return result;
     }
+       
+    
+    inputfield.onclick = function input() {
+        document.getElementById('inputfield').innerHTML = '<input type="text" id="assignment1" name="assignment1">';
+      }
+    document.getElementById("studentid1").innerHTML=studentid();
