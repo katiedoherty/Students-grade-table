@@ -10,16 +10,17 @@
     }
     document.getElementById("studentid1").innerHTML=studentid();
     var grades = 0;
+   
     
-    var gradeids =1;
-    
-    function entergrades(){
+    function entergrades(clickedid){
       var grade1 = prompt("Enter your grade for assignment");
-      document.getElementById("outputgrade").id=gradeids;
-      //var gradeid = document.getElementsByClassName("outputgrade")[0].id;
-      document.getElementById(gradeids).innerText = grade1+"%";
+      document.getElementById(clickedid).innerText = grade1+"%";
       grades=grades+grade1;
-      gradeids=gradeids+1;
+     
     }
        
+  
+      
+      document.getElementById('finalgrade').innerText = grades+"%";
+   
   
