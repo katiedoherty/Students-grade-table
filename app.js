@@ -1,8 +1,3 @@
-/*$.get('names.txt', function(txt) {
-    var lines = txt.responseText.split("\n");
-    var randLineNum = Math.floor(Math.random() * lines.length);
-    return lines[randLineNum]; // random line from the text file
-    });*/
 
   function studentid(){
         length=9;
@@ -13,9 +8,18 @@
         }
         return result;
     }
-       
-    
-    inputfield.onclick = function input() {
-        document.getElementById('inputfield').innerHTML = '<input type="text" id="assignment1" name="assignment1">';
-      }
     document.getElementById("studentid1").innerHTML=studentid();
+    var grades = 0;
+    
+    var gradeids =1;
+    
+    function entergrades(){
+      var grade1 = prompt("Enter your grade for assignment");
+      document.getElementById("outputgrade").id=gradeids;
+      //var gradeid = document.getElementsByClassName("outputgrade")[0].id;
+      document.getElementById(gradeids).innerText = grade1+"%";
+      grades=grades+grade1;
+      gradeids=gradeids+1;
+    }
+       
+  
