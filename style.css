@@ -13,3 +13,8 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  .below60{
+    /*background-color:red;*/
+    color:red;
+  }
