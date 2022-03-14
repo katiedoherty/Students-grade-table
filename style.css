@@ -10,11 +10,17 @@ table {
     padding: 8px;
   }
   
-  tr:nth-child(even) {
+  tr .above60:nth-child(even) {
     background-color: #dddddd;
   }
 
-  .below60{
-    /*background-color:red;*/
-    color:red;
+  .assignmentunsubmitted {
+    background-color: yellow;
   }
+
+  .below60{
+    background-color:red;
+    color:white;
+  }
+
+  
