@@ -9,18 +9,18 @@
         return result;
     }
     document.getElementById("studentid1").innerHTML=studentid();
-    var grades = 0;
+    //var grades = 0;
    
     
     function entergrades(clickedid){
       var grade1 = prompt("Enter your grade for assignment");
       document.getElementById(clickedid).innerText = grade1+"%";
-      grades=grades+grade1;
-     
     }
+    
+   
        
   
       
-      document.getElementById('finalgrade').innerText = grades+"%";
+      document.getElementById('finalgrade').innerText = document.getElementById(clickedid).textContent;
    
   
