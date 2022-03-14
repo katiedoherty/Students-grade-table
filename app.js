@@ -222,16 +222,18 @@
 
       
     }
-
+    var num =6;
+    var index=7
     //function to add column
     function addcolumn(){
       row= document.getElementsByTagName("tr");
-
-      //var columnlength=columnslength();
-      for(let i =0; i<row.length; i++){
-        row[i].insertCell(7);
+      
+      row[0].insertCell(index).innerHTML="Assignment "+num;
+      for(let i =1; i<row.length; i++){
+        row[i].insertCell(index);
       }
-     
+     num=num+1;
+     index=index+1;
     }
 
     
