@@ -198,7 +198,44 @@
     //the unsubmitted count
     if(unsubmittedcount==45){
     document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount;}
+
+    //function to count columns
+    function columnslength(){
+      var nodes = document.getElementsByTagName("tr");
+      return nodes.length;
+    }
+
+    function rowslength(){
+      var nodes = document.getElementById("row4");
+      var rowlength=nodes.getElementsByTagName("td")
+      return rowlength.length;
+    }
     
+    //function to add a row
+    function addrow(){
+      var table = document.getElementById("table");
+      var row = table.insertRow(columnslength());
+      var rowlength=rowslength();
+      for(let i =0; i<rowlength; i++){
+        row.insertCell(i);
+      }
+
+      
+    }
+
+    //function to add column
+    function addcolumn(){
+      row= document.getElementsByTagName("tr");
+
+      //var columnlength=columnslength();
+      for(let i =0; i<row.length; i++){
+        row[i].insertCell(7);
+      }
+     
+    }
+
+    
+  
 
     
     
