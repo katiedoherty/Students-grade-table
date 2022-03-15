@@ -3,6 +3,10 @@ table {
     border-collapse: collapse;
     width: 100%;
   }
+
+  .assignmentunsubmitted {
+    background-color: yellow;
+  }
   
   td, th {
     border: 1px solid #dddddd;
@@ -10,13 +14,16 @@ table {
     padding: 8px;
   }
   
+  
   tr .above60:nth-child(even) {
     background-color: #dddddd;
   }
 
-  .assignmentunsubmitted {
-    background-color: yellow;
+  tr .above60:nth-child(odd) {
+    background-color: white;
   }
+
+  
 
   .below60{
     background-color:red;

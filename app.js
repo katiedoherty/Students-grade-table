@@ -90,17 +90,20 @@
         grade1="N/A";
       }
 
+      
       if(grade1=="N/A"){
         document.getElementById(clickedid).innerText = "-";
       }
       else{
 
       if(grade1<60){
-        document.getElementById(clickedid).className = "below60";
+        document.getElementById(clickedid).className += " below60";
+        
         
       }
       else{
-        document.getElementById(clickedid).className = "above60";
+        document.getElementById(clickedid).className += " above60";
+        
       }
       if(document.getElementById(clickedid).innerText!="-"){
         changedassignment = parseInt(document.getElementById(clickedid).innerText);
@@ -114,9 +117,10 @@
 
       document.getElementById(clickedid).innerText = grade1+"%";
 
+      var classname1=document.getElementById(clickedid).className;
       
 
-      if(clickedid=="inputfield1"||clickedid=="inputfield2"||clickedid=="inputfield3"||clickedid=="inputfield4"||clickedid=="inputfield5"){
+      if(classname1=="assignmentunsubmitted student1 below60"||classname1=="assignmentunsubmitted student1 above60"){
         gradeslength=gradeslength+parseInt(1)-changedlength;
         addedgrades=parseInt(addedgrades)+parseInt(grade1)-parseInt(changedassignment);
         grades = addedgrades/gradeslength;
@@ -126,7 +130,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(clickedid=="inputfield6"||clickedid=="inputfield7"||clickedid=="inputfield8"||clickedid=="inputfield9"||clickedid=="inputfield10"){
+      else if(classname1=="assignmentunsubmitted student2 below60"||classname1=="assignmentunsubmitted student2 above60"){
         gradeslength2=gradeslength2+parseInt(1)-changedlength;
         addedgrades2=parseInt(addedgrades2)+parseInt(grade1)-parseInt(changedassignment);
         grades2 = addedgrades2/gradeslength2;
@@ -134,7 +138,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(clickedid=="inputfield11"||clickedid=="inputfield12"||clickedid=="inputfield13"||clickedid=="inputfield14"||clickedid=="inputfield15"){
+      else if(classname1=="assignmentunsubmitted student3 below60"||classname1=="assignmentunsubmitted student3 above60"){
         gradeslength3=gradeslength3+parseInt(1)-changedlength;
         addedgrades3=parseInt(addedgrades3)+parseInt(grade1)-parseInt(changedassignment);
         grades3 = addedgrades3/gradeslength3;
@@ -142,7 +146,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(clickedid=="inputfield16"||clickedid=="inputfield17"||clickedid=="inputfield18"||clickedid=="inputfield19"||clickedid=="inputfield20"){
+      else if(classname1=="assignmentunsubmitted student4 below60"||classname1=="assignmentunsubmitted student4 above60"){
         gradeslength4=gradeslength4+parseInt(1)-changedlength;
         addedgrades4=parseInt(addedgrades4)+parseInt(grade1)-parseInt(changedassignment);
         grades4 = addedgrades4/gradeslength4;
@@ -150,7 +154,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(clickedid=="inputfield21"||clickedid=="inputfield22"||clickedid=="inputfield23"||clickedid=="inputfield24"||clickedid=="inputfield25"){
+      else if(classname1=="assignmentunsubmitted student5 below60"||classname1=="assignmentunsubmitted student5 above60"){
         gradeslength5=gradeslength5+parseInt(1)-changedlength;
         addedgrades5=parseInt(addedgrades5)+parseInt(grade1)-parseInt(changedassignment);
         grades5 = addedgrades5/gradeslength5;
@@ -158,14 +162,14 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(clickedid=="inputfield26"||clickedid=="inputfield27"||clickedid=="inputfield28"||clickedid=="inputfield29"||clickedid=="inputfield30"){
+      else if(classname1=="assignmentunsubmitted student6 below60"||classname1=="assignmentunsubmitted student6 above60"){
         gradeslength6=gradeslength2+parseInt(1)-changedlength;
         addedgrades6=parseInt(addedgrades6)+parseInt(grade1)-parseInt(changedassignment);
         grades6 = addedgrades6/gradeslength6;
         document.getElementById('finalgrade6').innerText = Math.round(grades6)+"%";
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments"+unsubmittedcount
-      }else if(clickedid=="inputfield31"||clickedid=="inputfield32"||clickedid=="inputfield33"||clickedid=="inputfield34"||clickedid=="inputfield35"){
+      }else if(classname1=="assignmentunsubmitted student7 below60"||classname1=="assignmentunsubmitted student7 above60"){
         gradeslength7=gradeslength7+parseInt(1)-changedlength;
         addedgrades7=parseInt(addedgrades7)+parseInt(grade1)-parseInt(changedassignment);
         grades7 = addedgrades7/gradeslength7;
@@ -173,7 +177,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(clickedid=="inputfield36"||clickedid=="inputfield37"||clickedid=="inputfield38"||clickedid=="inputfield39"||clickedid=="inputfield40"){
+      else if(classname1=="assignmentunsubmitted student8 below60"||classname1=="assignmentunsubmitted student8 above60"){
         gradeslength8=gradeslength8+parseInt(1)-changedlength;
         addedgrades8=parseInt(addedgrades8)+parseInt(grade1)-parseInt(changedassignment);
         grades8 = addedgrades8/gradeslength8;
@@ -181,7 +185,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments"+unsubmittedcount
       }
-      else if(clickedid=="inputfield41"||clickedid=="inputfield42"||clickedid=="inputfield43"||clickedid=="inputfield44"||clickedid=="inputfield45"){
+      else if(classname1=="assignmentunsubmitted student9 below60"||classname1=="assignmentunsubmitted student9 above60"){
         gradeslength9=gradeslength9+parseInt(1)-changedlength;
         addedgrades9=parseInt(addedgrades9)+parseInt(grade1)-parseInt(changedassignment);
         grades9 = addedgrades9/gradeslength9;
@@ -190,6 +194,8 @@
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
         
       }
+
+
   
     }
       
@@ -211,27 +217,82 @@
       return rowlength.length;
     }
     
+    var j=1;
+
+    //countclicks
+    function countclicks(){
+      count++
+    }
+    var count=0;
     //function to add a row
     function addrow(){
       var table = document.getElementById("table");
       var row = table.insertRow(columnslength());
+      var name = row.insertCell(0);
+      name.setAttribute("id", "studentname"+count);
+      name.setAttribute("onClick", "addstudentsname(this.id)")
+     var studentid= row.insertCell(1);
+     studentid.setAttribute("id", "studentid"+count);
+     studentid.setAttribute("onClick", "addstudentsid(this.id)")
       var rowlength=rowslength();
-      for(let i =0; i<rowlength; i++){
-        row.insertCell(i);
+      var columnidrow="";
+      var classidrow="";
+      var targetcell="";
+      
+
+      for(let i =2; i<rowlength-1; i++){
+        targetcell=row.insertCell(i);
+        columnidrow="newgrades"+i;
+        classidrow="assignmentunsubmitted";
+        targetcell.setAttribute("id", columnidrow);
+        targetcell.setAttribute("class", classidrow);
+        targetcell.setAttribute("onClick", "entergrades(this.id)");
+        targetcell.innerHTML = "-";
+        console.log(document.getElementById(columnidrow));
       }
 
       
+
+     var newfinalgrade= row.insertCell(rowlength-1);
+      newfinalgrade.innerHTML="-";
+      newfinalgrade.setAttribute("id", "newstudentgrade"+count);
+      
+      
     }
+
+
+    //function to add names and student id to new rows
+
+    function addstudentsname(clickedid){
+     var name = prompt("Enter Student Name");
+     document.getElementById(clickedid).innerText = name;
+    }
+
+    function addstudentsid(clickedid){
+      var studentid = prompt("Enter Student Name");
+      document.getElementById(clickedid).innerText = studentid;
+     }
     var num =6;
     var index=7
+    var columnid="columndid";
+    var classid="";
+    var targetedcell="";
     //function to add column
     function addcolumn(){
       row= document.getElementsByTagName("tr");
       
       row[0].insertCell(index).innerHTML="Assignment "+num;
       for(let i =1; i<row.length; i++){
-        row[i].insertCell(index);
+        targetedcell = row[i].insertCell(index);
+        columnid="columnid"+i;
+        classid="assignmentunsubmitted student"+i;
+        targetedcell.setAttribute("id", columnid);
+        targetedcell.setAttribute("class", classid);
+        targetedcell.setAttribute("onClick", "entergrades(this.id)");
+        targetedcell.innerHTML = "-";
+        //console.log(document.getElementById(columnid));
       }
+      
      num=num+1;
      index=index+1;
     }
