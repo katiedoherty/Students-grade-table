@@ -195,6 +195,16 @@
         
       }
 
+     
+      
+      count=count-1;
+      var insertedgradeslength=0;
+      console.log(classname1);
+      //for(let i =2; i<rowslength()-1; i++){
+        if(classname1=="assignmentunsubmitted student"+count+" below60"||classname1=="assignmentunsubmitted student"+count+" above60"){
+          
+        }
+      //}
 
   
     }
@@ -242,13 +252,13 @@
 
       for(let i =2; i<rowlength-1; i++){
         targetcell=row.insertCell(i);
-        columnidrow="newgrades"+i;
-        classidrow="assignmentunsubmitted";
+        columnidrow="newgrades"+i+count;
+        classidrow="assignmentunsubmitted student"+count;
         targetcell.setAttribute("id", columnidrow);
         targetcell.setAttribute("class", classidrow);
         targetcell.setAttribute("onClick", "entergrades(this.id)");
         targetcell.innerHTML = "-";
-        console.log(document.getElementById(columnidrow));
+        
       }
 
       
