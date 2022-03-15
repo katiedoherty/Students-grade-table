@@ -233,6 +233,8 @@
         
       //}
 
+     
+
   percentages=0;
   amountofpercentagesentered=0;
     }
@@ -319,7 +321,7 @@
     function addcolumn(){
       row= document.getElementsByTagName("tr");
       
-      row[0].insertCell(index).innerHTML="Assignment "+num;
+      row[0].insertCell(index).innerHTML="Assignment "+(index-1);
       for(let i =1; i<row.length; i++){
         targetedcell = row[i].insertCell(index);
         columnid="columnid"+i;
@@ -331,23 +333,26 @@
         //console.log(document.getElementById(columnid));
       }
       
+      
      num=num+1;
      index=index+1;
     }
 
-    //reset table back to its original format
-    function resetbtn(){
-      
-
+    //deletes columns
+    function deletecolumn(){
+      row= document.getElementsByTagName("tr");
+      index=index-1;
+      row[0].deleteCell(index);
+      for(let i =1; i<row.length; i++){
+        targetedcell = row[i].deleteCell(index);
+        
+      }
     }
-  
 
-    
-    
+    function deleterows(){
+
+      var content = document.getElementById("table");
+      content.deleteRow(columnslength()-1);
    
-       
-  
-      
-      
-   
-  
+
+  }
