@@ -34,6 +34,8 @@
 
 
     //code for entering in the assignment grades and generating final avergae grade overall.
+    var percentages=0;
+      var amountofpercentagesentered=0;
 
     //student1 variables
     var grades = parseInt(0);
@@ -82,6 +84,7 @@
     var gradeslength9=parseInt(0);
     var addedgrades9=0;
 
+    
 
     var unsubmittedcount=45;
     function entergrades(clickedid){
@@ -89,6 +92,11 @@
       if(isNaN(grade1)){
         grade1="N/A";
       }
+      
+      
+      
+      var newfinalgrade = 0;
+      
 
       
       if(grade1=="N/A"){
@@ -97,13 +105,14 @@
       else{
 
       if(grade1<60){
-        document.getElementById(clickedid).className += " below60";
-        
+        //document.getElementById(clickedid).className += " below60";
+        document.getElementById(clickedid).style.color = 'white';
+        document.getElementById(clickedid).style.backgroundColor = 'red';
         
       }
       else{
-        document.getElementById(clickedid).className += " above60";
-        
+       // document.getElementById(clickedid).className += " above60";
+       document.getElementById(clickedid).style.backgroundColor = 'white';
       }
       if(document.getElementById(clickedid).innerText!="-"){
         changedassignment = parseInt(document.getElementById(clickedid).innerText);
@@ -120,7 +129,7 @@
       var classname1=document.getElementById(clickedid).className;
       
 
-      if(classname1=="assignmentunsubmitted student1 below60"||classname1=="assignmentunsubmitted student1 above60"){
+      if(classname1=="assignmentunsubmitted student1"||classname1=="assignmentunsubmitted student1"){
         gradeslength=gradeslength+parseInt(1)-changedlength;
         addedgrades=parseInt(addedgrades)+parseInt(grade1)-parseInt(changedassignment);
         grades = addedgrades/gradeslength;
@@ -130,7 +139,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(classname1=="assignmentunsubmitted student2 below60"||classname1=="assignmentunsubmitted student2 above60"){
+      else if(classname1=="assignmentunsubmitted student2"){
         gradeslength2=gradeslength2+parseInt(1)-changedlength;
         addedgrades2=parseInt(addedgrades2)+parseInt(grade1)-parseInt(changedassignment);
         grades2 = addedgrades2/gradeslength2;
@@ -138,7 +147,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(classname1=="assignmentunsubmitted student3 below60"||classname1=="assignmentunsubmitted student3 above60"){
+      else if(classname1=="assignmentunsubmitted student3"){
         gradeslength3=gradeslength3+parseInt(1)-changedlength;
         addedgrades3=parseInt(addedgrades3)+parseInt(grade1)-parseInt(changedassignment);
         grades3 = addedgrades3/gradeslength3;
@@ -146,7 +155,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(classname1=="assignmentunsubmitted student4 below60"||classname1=="assignmentunsubmitted student4 above60"){
+      else if(classname1=="assignmentunsubmitted student4"){
         gradeslength4=gradeslength4+parseInt(1)-changedlength;
         addedgrades4=parseInt(addedgrades4)+parseInt(grade1)-parseInt(changedassignment);
         grades4 = addedgrades4/gradeslength4;
@@ -154,7 +163,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(classname1=="assignmentunsubmitted student5 below60"||classname1=="assignmentunsubmitted student5 above60"){
+      else if(classname1=="assignmentunsubmitted student5"){
         gradeslength5=gradeslength5+parseInt(1)-changedlength;
         addedgrades5=parseInt(addedgrades5)+parseInt(grade1)-parseInt(changedassignment);
         grades5 = addedgrades5/gradeslength5;
@@ -162,8 +171,8 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(classname1=="assignmentunsubmitted student6 below60"||classname1=="assignmentunsubmitted student6 above60"){
-        gradeslength6=gradeslength2+parseInt(1)-changedlength;
+      else if(classname1=="assignmentunsubmitted student6"){
+        gradeslength6=gradeslength6+parseInt(1)-changedlength;
         addedgrades6=parseInt(addedgrades6)+parseInt(grade1)-parseInt(changedassignment);
         grades6 = addedgrades6/gradeslength6;
         document.getElementById('finalgrade6').innerText = Math.round(grades6)+"%";
@@ -177,7 +186,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments: "+unsubmittedcount
       }
-      else if(classname1=="assignmentunsubmitted student8 below60"||classname1=="assignmentunsubmitted student8 above60"){
+      else if(classname1=="assignmentunsubmitted student8"){
         gradeslength8=gradeslength8+parseInt(1)-changedlength;
         addedgrades8=parseInt(addedgrades8)+parseInt(grade1)-parseInt(changedassignment);
         grades8 = addedgrades8/gradeslength8;
@@ -185,7 +194,7 @@
         unsubmittedcount=unsubmittedcount-1;
         document.getElementById("unsubmittedcount").innerText = "Number of unsubmitted Assignments"+unsubmittedcount
       }
-      else if(classname1=="assignmentunsubmitted student9 below60"||classname1=="assignmentunsubmitted student9 above60"){
+      else if(classname1=="assignmentunsubmitted student9"){
         gradeslength9=gradeslength9+parseInt(1)-changedlength;
         addedgrades9=parseInt(addedgrades9)+parseInt(grade1)-parseInt(changedassignment);
         grades9 = addedgrades9/gradeslength9;
@@ -195,20 +204,39 @@
         
       }
 
-     
-      
-      count=count-1;
-      var insertedgradeslength=0;
-      console.log(classname1);
-      //for(let i =2; i<rowslength()-1; i++){
-        if(classname1=="assignmentunsubmitted student"+count+" below60"||classname1=="assignmentunsubmitted student"+count+" above60"){
-          
+      for(let i =0; i<(parseInt(count)); i++){
+      if(classname1=="assignmentunsubmitted newstudent"+(i)){
+          for(let j =2; j<rowslength()-1; j++){
+            var textofid=parseInt(document.getElementById("newgrades"+j+i).textContent);
+            
+            if(isNaN(textofid)){
+              document.getElementById("newstudentgrade"+(i)).innerText = "-";
+              //console.log(textofid);
+            }
+            else{
+              console.log(parseInt(textofid));
+              percentages=parseInt(percentages)+parseInt(textofid);
+              //console.log(percentages);
+              amountofpercentagesentered=amountofpercentagesentered+1;
+              //console.log(amountofpercentagesentered);
+            }
+           
+          }
+         
+         newfinalgrade=percentages/amountofpercentagesentered;
+        if(amountofpercentagesentered!=0){
+         document.getElementById("newstudentgrade"+(i)).innerText = Math.round(newfinalgrade)+"%";
         }
+        }
+       // console.log(classname1);
+        //console.log("assignmentunsubmitted student"+(i));
+        
       //}
 
-  
+  percentages=0;
+  amountofpercentagesentered=0;
     }
-      
+  }
     }
 
     //the unsubmitted count
@@ -253,7 +281,7 @@
       for(let i =2; i<rowlength-1; i++){
         targetcell=row.insertCell(i);
         columnidrow="newgrades"+i+count;
-        classidrow="assignmentunsubmitted student"+count;
+        classidrow="assignmentunsubmitted newstudent"+count;
         targetcell.setAttribute("id", columnidrow);
         targetcell.setAttribute("class", classidrow);
         targetcell.setAttribute("onClick", "entergrades(this.id)");
@@ -307,7 +335,11 @@
      index=index+1;
     }
 
-    
+    //reset table back to its original format
+    function resetbtn(){
+      
+
+    }
   
 
     
