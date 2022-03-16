@@ -339,20 +339,27 @@
     }
 
     //deletes columns
+    function countclicks2(){
+      count2++
+    }
+    var count2=0;
     function deletecolumn(){
+     
       row= document.getElementsByTagName("tr");
       index=index-1;
       row[0].deleteCell(index);
       for(let i =1; i<row.length; i++){
         targetedcell = row[i].deleteCell(index);
         
-      }
+     
+    }
     }
 
     function deleterows(){
-
+      
+      for(let i =0; i<count; i++){
       var content = document.getElementById("table");
       content.deleteRow(columnslength()-1);
-   
+      }
 
   }
