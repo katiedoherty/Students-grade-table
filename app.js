@@ -228,10 +228,7 @@
          document.getElementById("newstudentgrade"+(i)).innerText = Math.round(newfinalgrade)+"%";
         }
         }
-       // console.log(classname1);
-        //console.log("assignmentunsubmitted student"+(i));
-        
-      //}
+       
 
      
 
@@ -317,6 +314,12 @@
     var columnid="columndid";
     var classid="";
     var targetedcell="";
+
+    //function to count the amount of times you click on countclicks so that if reset button is clicked we can go back to original data
+    function countclicks2(){
+      count3++;
+    }
+    var count3=0;
     //function to add column
     function addcolumn(){
       row= document.getElementsByTagName("tr");
@@ -338,28 +341,72 @@
      index=index+1;
     }
 
-    //deletes columns
-    function countclicks2(){
-      count2++
-    }
-    var count2=0;
-    function deletecolumn(){
-     
-      row= document.getElementsByTagName("tr");
-      index=index-1;
-      row[0].deleteCell(index);
-      for(let i =1; i<row.length; i++){
-        targetedcell = row[i].deleteCell(index);
-        
-     
-    }
-    }
-
-    function deleterows(){
+    
+   
+    
+//function for the reset button to revert back to original data
+    function reset(){
       
       for(let i =0; i<count; i++){
       var content = document.getElementById("table");
       content.deleteRow(columnslength()-1);
       }
+      
+      //var row= document.getElementsByTagName("tr");
+      for(let i =0; i<count3; i++){
+       var  row= document.getElementsByTagName("tr");
+      index=index-1;
+      row[0].deleteCell(index);
+      for(let i =1; i<row.length; i++){
+        targetedcell = row[i].deleteCell(index);
+        }
+      }
 
+      var row1= document.getElementsByTagName("tr");
+      
+      for(let i =1; i<row1.length; i++){
+        var removepercent = document.getElementById("columnid"+i).textContent;
+        removepercent = parseInt(removepercent);
+
+        if(isNaN(removepercent)){
+          removepercent=0;
+        }
+        
+      }
+
+      //calculate new percentage after column deleted
+
+     for(let i =1; i<row1.length; i++){
+        if(classname1=="assignmentunsubmitted newstudent"+(i)){
+            for(let j =2; j<rowslength()-1; j++){
+            var idforassignmentgrade= document.getElementsByClassName("assignmentunsubmitted student"+i)[j].id;
+              var textofid=parseInt(document.getElementById(idforassignmentgrade).textContent);
+              
+              if(isNaN(textofid)){
+                document.getElementById("newstudentgrade"+(i)).innerText = "-";
+                //console.log(textofid);
+              }
+              else{
+                console.log(parseInt(textofid));
+                percentages=parseInt(percentages)+parseInt(textofid);
+                //console.log(percentages);
+                amountofpercentagesentered=amountofpercentagesentered+1;
+                //console.log(amountofpercentagesentered);
+              }
+             
+            }
+           
+          
+         
+          }
+  
+  
+      }
+    
+      
+        count3=0;
+        count=0;
+        percentages=0;
+        amountofpercentagesentered=0;
   }
+  
