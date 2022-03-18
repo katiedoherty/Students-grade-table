@@ -1,11 +1,17 @@
 table {
-    font-family: arial, sans-serif;
+    font-family: sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
 
+  .headings{
+    background-color: grey;
+    text-align: center;
+  }
+
   .assignmentunsubmitted {
     background-color: yellow;
+    text-align: center;
   }
   
   td, th {
@@ -29,5 +35,7 @@ table {
     background-color:red;
     color:white;
   }
+
+  
 
   
